@@ -27,8 +27,8 @@ function addToCart(item) {
 }
 ```
 
-`ringUp()` is _not_ a pure function: the function modifies a variable outside of its own scope. The result wouldn't
-always be the same — what if we accidentally change the `total` variable? It's not returning a value either - if we can
+`addToCart()` is _not_ a pure function: the function modifies a variable outside of its own scope. The result wouldn't
+always be the same — what if we accidentally change the `item` variable? It's not returning a value either - if we can
 call a function and not worry about the return value, it is by definition impure.
 
 Instead: consider this:
