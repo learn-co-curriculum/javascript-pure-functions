@@ -1,10 +1,14 @@
 # JavaScript Pure Functions
 
+## Overview 
+
+We'll define and write pure functions and also rewrite functions to be pure. 
+
 ## Objectives
 
-1. Explain what a "pure" function is
-2. Practice writing functions without side effects
-3. Practice identifying side effects
+1. Define the inputs and outputs of a  "pure function" 
+2. Define and identify side effects
+3. Write functions without side effects
 
 ## What's a pure function?
 
@@ -67,7 +71,7 @@ function that sets the text value of an input is idempotent - you can call it as
 value, it will still set the value on the input, no matter how many times you run the function.
 
 Pure functions are by definition idempotent since all they do is take input values and return an output value. If the
-output values stay the same, so will the result. An idempotent function, however, is not always pure function. An
+output values stay the same, so will the result. An idempotent function, however, is not always a pure function. An
 idempotent function can still have side-effects, for example, removing an item in a database. The function can be called
 several times, and the item will still be gone. 
 
@@ -98,7 +102,7 @@ let heroesWithInitials = addInitialsToHeroes(heroes);
 ```
 
 The `return heroes;` part might make us feel good about ourselves — we're returning a value based on the `heroes` input,
-right?. We're forgetting something though: the original array _and_ the objects are being modified in the process! After
+right? We're forgetting something though: the original array _and_ the objects are being modified in the process! After
 running the function, we can access the original array to see that its elements have been modified as well:
 
 ```js
