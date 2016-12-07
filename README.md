@@ -6,7 +6,7 @@ We'll define and write pure functions and also rewrite functions to be pure.
 
 ## Objectives
 
-1. Define the inputs and outputs of a  "pure function" 
+1. Define the inputs and outputs of a "pure function"
 2. Define and identify side effects
 3. Write functions without side effects
 
@@ -53,15 +53,15 @@ const cart = [];
 const addToCart = (cart, item) => [...cart, item];
 ```
 
-Side effects can be things like `console.log`, saving something in a database (in the case of Node.js), fetching some remote data, mutating shared program state that is outside of the function, ... All of these will make your function impure. Pure functions make us more confident — without fail, it will yield the same result as long as we pass in the same values. Easy as that!
+Side effects can be things like `console.log`, saving something in a database (in the case of Node.js), fetching some remote data, mutating shared program state that is outside of the function, et cetera. All of these will make your function impure. Pure functions make us more confident — without fail, it will yield the same result as long as we pass in the same values. Easy as that!
 
 ## Idempotency
-Fancy word, right? You'll sometimes notice this word being thrown around. It might sound intimidating, but all it means is that the function can basically be repeated many times and you'd still end up with the same result. For example, a function that sets the text value of an input is idempotent - you can call it as many times as you want with the same value, it will still set the value on the input, no matter how many times you run the function.
+Fancy word, right? You'll sometimes notice this word being thrown around. It might sound intimidating, but all it means is that the function can be repeated many times and you'll still end up with the same result. For example, a function that sets the text value of an input is idempotent - you can call it as many times as you want with the same value, and it will still set the same value on the input, no matter how many times you run the function.
 
-Pure functions are by definition idempotent since all they do is take input values and return an output value. If the output values stay the same, so will the result. An idempotent function, however, is not always a pure function. An idempotent function can still have side-effects, for example, removing an item in a database. The function can be called several times, and the item will still be gone. 
+Pure functions are by definition idempotent since all they do is take input values and return an output value. If the input values stay the same, so will the result. An idempotent function, however, is not always a pure function. An idempotent function can still have side-effects, for example, removing an item in a database. The function can be called several times, and the item will still be gone. 
 
 ## Impostors are afoot
-Some functions might _appear_ to be pure, but after closer inspection, they're not! For example, let's say we have some data on our favorite superheroes:
+Some functions might _appear_ to be pure, but after closer inspection they're not! For example, let's say we have some data on our favorite superheroes:
 
 ```js
 let heroes = [
